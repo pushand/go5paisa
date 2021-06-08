@@ -16,7 +16,7 @@ import (
 const (
 	baseURL string = "https://Openapi.5paisa.com/VendorsAPI/Service1.svc"
 
-	loginRoute          string = "/V2/LoginRequestMobileNewbyEmail"
+	loginRoute          string = "/V3/LoginRequestMobileNewbyEmail"
 	marginRoute         string = "/V3/Margin"
 	orderBookRoute      string = "/V2/OrderBook"
 	holdingsRoute       string = "/V2/Holding"
