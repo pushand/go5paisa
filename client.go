@@ -33,7 +33,7 @@ const (
 	tradeInfoRequestCode      string = "5PTrdInfo"
 	orderStatusRequestCode    string = "5POrdStatus"
 	orderPlacementRequestCode string = "5POrdReq"
-	loginRequestCode          string = "5PLoginV2"
+	loginRequestCode          string = "5PLoginV3"
 
 	// Content Type
 	contentType string = "application/json"
@@ -81,10 +81,10 @@ func Init(c *Config) *AppConfig {
 }
 
 //Login logs in a client
-func Login(conf *AppConfig, email string, password string, dob string) (*Client, error) {
-	encryptedEmail := encrypt(conf.config.EncryptionKey, email)
-	encryptedPassword := encrypt(conf.config.EncryptionKey, password)
-	encryptedDOB := encrypt(conf.config.EncryptionKey, dob)
+func Login(conf *AppConfig, encryptedEmail string, encryptedPassword string, encryptedDOB string) (*Client, error) {
+	//encryptedEmail := encrypt(conf.config.EncryptionKey, email)
+	//encryptedPassword := encrypt(conf.config.EncryptionKey, password)
+	//encryptedDOB := encrypt(conf.config.EncryptionKey, dob)
 	var client *Client
 	jar, err := cookiejar.New(&cookiejar.Options{PublicSuffixList: publicsuffix.List})
 	if err != nil {
